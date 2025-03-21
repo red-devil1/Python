@@ -1,0 +1,23 @@
+# Experiment No.7: Arrays 
+
+# Write a python program to access a range of items in an array by using the slicing operator.  
+# Write a Python program To create an array of numeric values.
+
+# Importing the array module
+import array
+
+# Create an array of Integers
+arr = array.array('i', [10, 20, 30, 40, 50, 60, 70, 80, 90])
+
+# Use slicing to access a range of items 
+sliced_arr = arr[2:5]
+
+# Display the original array and the sliced array
+print("Original Array:", arr)
+print("Sliced Array:", sliced_arr)
+
+# Create an array of numeric values
+numeric_arr = array.array('i', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+# Display the created array
+print("Array of numeric values:", numeric_arr)
