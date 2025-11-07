@@ -1,0 +1,116 @@
+Experiment No. 8: 
+
+The aim is to demonstrate the use of various **Swing components** in Java to create a graphical user interface 
+(GUI) and handle user events. 
+
+A. Write a program using various swing components. 
+B. Create a login page using the components of Swing. 
+C. Write a program to demonstrate use of radio button. 
+
+import javax.swing.*;
+
+public class SwingComponentsDemo {
+    public static void main(String[] args) {
+        // Always start Swing code on the Event Dispatch Thread (EDT)
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Swing Components Demo");
+
+            JLabel label = new JLabel("Enter Name:");
+            label.setBounds(20, 20, 100, 30);
+
+            JTextField textField = new JTextField();
+            textField.setBounds(120, 20, 150, 30);
+
+            JButton button = new JButton("Submit");
+            button.setBounds(120, 60, 100, 30);
+
+            String[] items = {"Java", "Python", "C++"};
+            JComboBox<String> comboBox = new JComboBox<>(items);
+            comboBox.setBounds(120, 100, 100, 30);
+
+            // Add components to the frame
+            frame.add(label);
+            frame.add(textField);
+            frame.add(button);
+            frame.add(comboBox);
+
+            // Set up frame
+            frame.setSize(350, 200);
+            frame.setLayout(null);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setLocationRelativeTo(null); // Center on screen
+            frame.setVisible(true);
+        });
+    }
+}
+
+
+
+
+import javax.swing.*;
+
+class LoginPage {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Login Page");
+
+        JLabel userLabel = new JLabel("Username:");
+        userLabel.setBounds(20, 20, 80, 30);
+
+        JTextField userText = new JTextField();
+        userText.setBounds(100, 20, 150, 30);
+
+        JLabel passLabel = new JLabel("Password:");
+        passLabel.setBounds(20, 60, 80, 30);
+
+        JPasswordField passText = new JPasswordField();
+        passText.setBounds(100, 60, 150, 30);
+
+        JButton loginButton = new JButton("Login");
+        loginButton.setBounds(100, 100, 80, 30);
+
+        frame.add(userLabel);
+        frame.add(userText);
+        frame.add(passLabel);
+        frame.add(passText);
+        frame.add(loginButton);
+
+        frame.setSize(300, 200);
+        frame.setLayout(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+    }
+}
+
+
+
+import javax.swing.*;
+
+class RadioButtonDemo {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Radio Button Example");
+
+        JRadioButton male = new JRadioButton("Male");
+        male.setBounds(50, 50, 100, 30);
+
+        JRadioButton female = new JRadioButton("Female");
+        female.setBounds(150, 50, 100, 30);
+
+        ButtonGroup bg = new ButtonGroup();
+        bg.add(male);
+        bg.add(female);
+
+        JButton button = new JButton("Submit");
+        button.setBounds(100, 100, 100, 30);
+
+        frame.add(male);
+        frame.add(female);
+        frame.add(button);
+
+        frame.setSize(300, 200);
+        frame.setLayout(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
+    }
+}
