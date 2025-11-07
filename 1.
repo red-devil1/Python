@@ -1,5 +1,9 @@
 # Experiment No.1:  
 
+The aim of this experiment is to implement the concept of constructor (default and parameterized). 
+The Default Constructor (which takes no arguments) and the Parameterized Constructor (which takes one or 
+more arguments).
+
 #A. Write a Java program to calculate the volume of a cuboid using a parameterized constructor. 
 B. Write a Java program to calculate the area of a rectangle using a default constructor. 
 C. Write a Java program to calculate the area of a rectangle using a parameterized constructor.
