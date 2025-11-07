@@ -1,0 +1,52 @@
+Experiment No. 10: 
+
+The aim is to demonstrate **JDBC** by writing a program that returns data for a specified record from a given 
+table, showing how to fetch and filter data from a database. 
+
+A. Write a JDBC program to return the data of a specified record from a given table. 
+
+
+import java.sql.*;
+import java.util.Scanner;
+
+public class FetchSpecificRecord {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/your_database";
+        String user = "root";
+        String password = "password";
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter student ID to Search: ");
+        int studentId = sc.nextInt();
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            Connection conn = DriverManager.getConnection(url, user, password);
+
+            String query = "SELECT * FROM students WHERE id = ?";
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setInt(1, studentId);
+
+            // Execute query
+            ResultSet rs = pst.executeQuery();
+
+            // Process result
+            if (rs.next()) {
+                System.out.println("Student ID: " + rs.getInt("id"));
+                System.out.println("Name: " + rs.getString("name"));
+                System.out.println("Age: " + rs.getInt("age"));
+            } else {
+                System.out.println("Record not found: ");
+            }
+
+            // Close resources
+            rs.close();
+            pst.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e); 
+        }
+    }
+}
+
