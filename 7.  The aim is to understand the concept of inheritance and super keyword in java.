@@ -1,0 +1,89 @@
+# Experiment No.7: 
+
+The aim is to understand the concept of inheritance and super keyword in java.
+
+A. Write a Java program to demonstrate single inheritance by calling a method of the parent class from 
+the child class. 
+B. Write a Java program to demonstrate the use of the super keyword in inheritance. 
+C. Write a Java program to demonstrate inheritance and super by adding two numbers in a derived class. 
+
+public class Main {
+    static class Parent {
+        void show() {
+            System.out.println("This is the parent class.");
+        }
+    }
+
+    static class Child extends Parent {
+        void display() {
+            show(); // call method from parent
+            System.out.println("This is the child class.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Child obj = new Child();
+        obj.display();
+    }
+}
+
+
+
+
+public class Main {
+    static class Animal {
+        String type = "Animal";
+
+        void sound() {
+            System.out.println("Animal makes a sound");
+        }
+    }
+
+    static class Dog extends Animal {
+        String type = "Dog";
+
+        void showType() {
+            System.out.println("Child type: " + type);
+            System.out.println("Parent type: " + super.type);
+        }
+
+        void sound() {
+            super.sound();  // Call parent class method
+            System.out.println("Dog barks");
+        }
+    }
+
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.showType();
+        d.sound();
+    }
+}
+
+
+public class Main {
+    static class Base {
+        int a, b;
+
+        Base(int x, int y) {
+            a = x;
+            b = y;
+        }
+    }
+
+    static class Derived extends Base {
+        Derived(int x, int y) {
+            super(x, y); // Calls Base constructor
+        }
+
+        void add() {
+            int sum = a + b;
+            System.out.println("Sum: " + sum);
+        }
+    }
+
+    public static void main(String[] args) {
+        Derived obj = new Derived(5, 10);
+        obj.add();
+    }
+}
