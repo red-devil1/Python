@@ -22,3 +22,34 @@ class GreaterOfTwo {
       System.out.println("Greater: " + b);
     }
   }
+
+
+import java.util.Scanner;
+
+class GreaterOfThree {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner (System.in);
+    System.out.print("Enter three number: ");
+    int a = sc.nextInt(), b = sc.nextInt(), c = sc.nextInt();
+    if (a >= b && a >= c)
+      System.out.println("Greater: " + a);
+    else if (b >= a && b >= c)
+      System.out.println("Greater: " + b);
+    else
+      System.out.println("Greater: " + c);
+  }
+}
+
+import java.util.Scanner;
+
+class OddEven {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter a number: ");
+    int n = sc.nextInt();
+    if (n % 2 == 0)
+      System.out.println(n + " is Even");
+    else
+      System.out.println(n + " is Odd");
+  }
+}
