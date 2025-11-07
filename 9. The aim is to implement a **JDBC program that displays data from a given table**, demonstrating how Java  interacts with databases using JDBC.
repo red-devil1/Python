@@ -1,0 +1,42 @@
+Experiment No. 9: 
+
+The aim is to implement a **JDBC program that displays data from a given table**, demonstrating how Java 
+interacts with databases using JDBC. 
+
+A. Write a JDBC program that display the data of given table. 
+
+
+import java.sql.*;
+
+public class DisplayTableData {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/School";
+        String user = "root";
+        String password = "password";
+        String query = "SELECT * FROM Students";
+
+        try {
+            // Load MySQL driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Try-with-resources: auto-close all JDBC objects
+            try (Connection conn = DriverManager.getConnection(url, user, password);
+                 Statement stmt = conn.createStatement();
+                 ResultSet rs = stmt.executeQuery(query)) {
+
+                System.out.println("ID\tName\tAge");
+                System.out.println("---------------------");
+
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String name = rs.getString("name");
+                    int age = rs.getInt("age");
+                    System.out.println(id + "\t" + name + "\t" + age);
+                }
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
