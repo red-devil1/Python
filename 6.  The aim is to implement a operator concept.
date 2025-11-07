@@ -1,0 +1,50 @@
+# Experiment No.6 : 
+
+The aim is to implement a operator concept.
+
+A. Write a Java program to demonstrate the right shift (>>) operator. 
+B. Write a Java program to demonstrate the left shift (<<) operator. 
+C. Write a Java program to find the remainder when one number is divided by another using the modulus 
+operator (%). 
+D. Write a Java program to find the greater of two numbers using the ternary operator. 
+
+public class RightShift {
+    public static void main(String[] args) {
+        int a = 16; 
+        int result = a >> 2; 
+        System.out.println("Right Shift Result: " + result);
+    }
+}
+public class LeftShift {
+    public static void main(String[] args) {
+        int a = 4; 
+        int result = a << 2; 
+        System.out.println("Left Shift Result: " + result);
+    }
+}
+
+
+
+import java.util.Scanner;
+
+public class ModulusExample{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Two Numbers: ");
+        int a = sc.nextInt(), b = sc.nextInt();
+        System.out.println("Remainder: " + (a % b));
+    }
+}
+
+
+import java.util.Scanner;
+
+public class TernaryGreater {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Two Numbers: ");
+        int a = sc.nextInt(), b = sc.nextInt();
+        int max = (a > b) ? a : b;
+        System.out.println("Greater Number is: " + max);
+    }
+}
