@@ -1,0 +1,32 @@
+# Experiment No.1:  
+
+#A. Write a Java program to calculate the volume of a cuboid using a parameterized constructor. 
+B. Write a Java program to calculate the area of a rectangle using a default constructor. 
+C. Write a Java program to calculate the area of a rectangle using a parameterized constructor.
+
+
+ class cuboid {
+     cuboid(double l, double w, double h) {
+       System.out.println("Volume: " + (l * w * h));
+     }
+     public static void main(String[] args) {
+       new cuboid(5, 4, 3);
+     }
+ }
+class Rectangle {
+    Rectangle() {
+      double l = 5, w = 3;
+      System.out.println("Area: " + (l * w));
+    }
+    public static void main(String[] args) {
+      new Rectangle();
+    }
+}
+class rectangle {
+    rectangle(double l, double w) {
+      System.out.println("Area: " + (l * w));
+    }
+    public static void main(String[] args) {
+      new rectangle(6, 4);
+    }
+}
