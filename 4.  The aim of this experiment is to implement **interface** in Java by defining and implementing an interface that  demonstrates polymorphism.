@@ -1,0 +1,52 @@
+# Experiment No.4: 
+
+The aim of this experiment is to implement **interface** in Java by defining and implementing an interface that 
+demonstrates polymorphism.
+
+A. Write a program to implement an interface. 
+B. Write a Java program to demonstrate extended interface.
+
+interface Animal {
+    void makeSound();
+}
+
+class Dog implements Animal {
+    public void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.makeSound(); // Output: Dog barks
+    }
+}
+
+
+
+interface A {
+    void showA();
+}
+
+interface B extends A {
+    void showB();
+}
+
+class Demo implements B {
+    public void showA() {
+        System.out.println("Inside showA()");
+    }
+
+    public void showB() {
+        System.out.println("Inside showB()");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Demo  d = new Demo();
+        d.showA();
+        d.showB();
+    }
+}
